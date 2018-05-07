@@ -17,15 +17,15 @@
         <div class="row center">
             <div class="center-block">
             <?php
-            //$result=mysqli_query($GLOBALS['connection'],);
-            $stms=  mysqli_query()->prepare('SELECT CategoryName FROM `category`');
 
-            $result->execute();
+            $result= mysqli_query($GLOBALS['connection'],'SELECT CategoryName FROM `category`') ;
 
-           // while($row = mysqli_fetch_array($result))
+            $row=mysqli_fetch_array($result);
+
+            while($row = mysqli_fetch_array($result))
             {?>
 
-             <a class="btn-large" href="catalogue.php?cat=<?php echo $result; ?> ">
+             <a class="btn-large" href="catalogue.php?cat=<?php echo $row['CategoryName'] ; ?> ">
                  <?php   echo $row['CategoryName'];?>
                 </a>
                 <?php  }  ?>
@@ -39,10 +39,18 @@
 
                     $cat=$_GET['cat'];
 
-                    $productCat = mysqli_query($GLOBALS['connection'], "SELECT * FROM product WHERE CategoryName = '".$cat."' ");
-                    $catArray = mysqli_fetch_array($productCat);
+                    $conn = $GLOBALS['connection'];
+                    $stmt = $conn->prepare("SELECT * FROM product WHERE CategoryName = ?");
+                    $stmt->bind_param("s", $cat);
+                    $stmt->execute();
 
-                foreach ($productCat as $catArray) {
+                    //$productCat = $GLOBALS['connection']->( "SELECT * FROM product WHERE CategoryName = '".$cat."' ");
+
+                    $result = $stmt->get_result();
+                    //$catArray = mysqli_fetch_array($productCat);
+                foreach ($result as $catArray) {
+
+                //foreach ($productCat as $catArray) {
 
 
                     ?>

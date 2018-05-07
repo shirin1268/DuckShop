@@ -37,7 +37,7 @@ require("../DB/session.php");
                         echo '<li><a href="ProfileView.php">My account</li>';
                     }else '<li><a href="CreatNewUser.php">Create account</li>';
                         ?>
-                    <li><a href="#">My orders</a></li>
+                    <li><a href="#">My orders22</a></li>
                     <li><?php if (logged_in()== true){ ?>
                             <a href="../Login/logout.php" >logout</a>
                         <?php }else{ ?>

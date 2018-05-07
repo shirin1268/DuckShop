@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bf40368-727c-48cf-952f-f415be00791b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Duck's-shop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,15 +66,16 @@
       <file leaf-file-name="CompanyInfoDAO.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AdminArea/Controller/CompanyInfoDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="308">
+              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
               <folding>
-                <marker date="1525178658010" expanded="true" signature="310:342" ph="UPDATE `comp... " />
-                <marker date="1525178658010" expanded="true" signature="310:488" ph="INSERT INTO `category`... " />
-                <marker date="1525178658010" expanded="true" signature="657:689" ph="SELECT * FRO... companyinformation" />
-                <marker date="1525178658010" expanded="true" signature="1335:1357" ph="UPDATE `Open... " />
-                <marker date="1525178658010" expanded="true" signature="1335:1704" ph="UPDATE `Open... " />
-                <marker date="1525178658010" expanded="true" signature="1335:1721" ph="UPDATE `open... " />
+                <marker date="1525692505296" expanded="true" signature="310:342" ph="UPDATE `comp... " />
+                <marker date="1525692505296" expanded="true" signature="310:488" ph="INSERT INTO `category`... " />
+                <marker date="1525692505296" expanded="true" signature="658:690" ph="SELECT * FRO... companyinformation" />
+                <marker date="1525692505296" expanded="true" signature="1336:1358" ph="UPDATE `Open... " />
+                <marker date="1525692505296" expanded="true" signature="1336:1705" ph="UPDATE `Open... " />
+                <marker date="1525692505296" expanded="true" signature="1336:1722" ph="UPDATE `open... " />
+                <marker date="1525692505296" expanded="true" signature="1904:1930" ph="SELECT * FRO... openinghours" />
               </folding>
             </state>
           </provider>
@@ -227,9 +227,9 @@
         <option value="$PROJECT_DIR$/pages/about.php" />
         <option value="$PROJECT_DIR$/DB/Connection.php" />
         <option value="$PROJECT_DIR$/pages/footer.php" />
-        <option value="$PROJECT_DIR$/AdminArea/Controller/CompanyInfoDAO.php" />
         <option value="$PROJECT_DIR$/AdminArea/Views/productdetailDAO.php" />
         <option value="$PROJECT_DIR$/pages/catalogue.php" />
+        <option value="$PROJECT_DIR$/AdminArea/Controller/CompanyInfoDAO.php" />
       </list>
     </option>
   </component>
@@ -392,12 +392,12 @@
       <workItem from="1523515399058" duration="296153000" />
       <workItem from="1525258680676" duration="660000" />
       <workItem from="1525683053407" duration="3858000" />
-      <workItem from="1525692223915" duration="244000" />
+      <workItem from="1525692223915" duration="502000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="543127000" />
+    <option name="totallyTimeSpent" value="543385000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="0" />
@@ -409,7 +409,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7802787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30868167" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -787,15 +787,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AdminArea/Controller/CompanyInfoDAO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="308">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
           <folding>
-            <marker date="1525178658010" expanded="true" signature="310:342" ph="UPDATE `comp... " />
-            <marker date="1525178658010" expanded="true" signature="310:488" ph="INSERT INTO `category`... " />
-            <marker date="1525178658010" expanded="true" signature="657:689" ph="SELECT * FRO... companyinformation" />
-            <marker date="1525178658010" expanded="true" signature="1335:1357" ph="UPDATE `Open... " />
-            <marker date="1525178658010" expanded="true" signature="1335:1704" ph="UPDATE `Open... " />
-            <marker date="1525178658010" expanded="true" signature="1335:1721" ph="UPDATE `open... " />
+            <marker date="1525692505296" expanded="true" signature="310:342" ph="UPDATE `comp... " />
+            <marker date="1525692505296" expanded="true" signature="310:488" ph="INSERT INTO `category`... " />
+            <marker date="1525692505296" expanded="true" signature="658:690" ph="SELECT * FRO... companyinformation" />
+            <marker date="1525692505296" expanded="true" signature="1336:1358" ph="UPDATE `Open... " />
+            <marker date="1525692505296" expanded="true" signature="1336:1705" ph="UPDATE `Open... " />
+            <marker date="1525692505296" expanded="true" signature="1336:1722" ph="UPDATE `open... " />
+            <marker date="1525692505296" expanded="true" signature="1904:1930" ph="SELECT * FRO... openinghours" />
           </folding>
         </state>
       </provider>

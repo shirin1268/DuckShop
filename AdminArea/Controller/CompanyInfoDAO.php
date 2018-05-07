@@ -15,7 +15,7 @@ if(isset($_POST['update'])){
 
 	$upmsg= "information updated!";
 
-	echo "<h4>$upmsg</h4>";
+	echo "<h4>$upmsg </h4>";
 
 }
 

@@ -20,7 +20,7 @@ CREATE TABLE `product`(
     Image VARCHAR(50) NOT NULL,
     Stock INT NOT NULL,
     OnSale BOOLEAN NULL ,
-    Upward BOOLEAN null
+    Upward BOOLEAN null ,
   FOREIGN KEY (CategoryName) REFERENCES `Category` (CategoryName)
 
 );
@@ -44,14 +44,13 @@ CREATE TABLE `OrderDetails`(
   UserID INT NOT NULL,
   OrderDate DATE NULL,
   FOREIGN KEY (UserID) REFERENCES `costumer` (UserID),
-  FOREIGN KEY (productID) REFERENCES `product` (productID),
-  FOREIGN KEY (OrderID) REFERENCES `Order` (OrderID)
+  FOREIGN KEY (productID) REFERENCES `product` (productID)
 );
 
 CREATE TABLE Text(
   textID INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
   textcontent VARCHAR(5000)NULL ,
-  textname VARCHAR(50)NOT NULL,
+  textname VARCHAR(50)NOT NULL
 
 );
  
@@ -67,9 +66,7 @@ CREATE TABLE CompanyInformation (
 );
 CREATE TABLE OpeningHours (
 OpeningID INT NOT NULL AUTO_INCREMENT PRIMARY key,
-WeeksDay VARCHAR NULL,
+WeeksDay VARCHAR(50) NULL,
 OpeningTime TIME NULL,
 ClosingTime TIME NULL
 );
-INSERT INTO `openinghours` (`DailyID`, `MonOpen`, `TuesOpen`, `WedOpen`, `ThursOpen`, `FriOpen`, `SatOpen`, `SunOpen`, `MonClose`, `TueClose`, `WedClose`, `ThursClose`, `FriClose`, `SatClose`, `SunClose`)
- VALUES (NULL, '8:00', '8:00', '8.00', '8:00', '8.00', '10:30', '10:30', '17:30', '17:30', '17:30', '17.30', '17:30', '17.30', '18.00');

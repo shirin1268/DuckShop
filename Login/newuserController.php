@@ -1,5 +1,4 @@
 <?php require_once("../DB/Connection.php"); ?>
-<?php // require_once("../DB/func.php"); ?>
 
 
 <?php

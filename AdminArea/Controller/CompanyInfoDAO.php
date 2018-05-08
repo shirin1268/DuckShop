@@ -23,8 +23,42 @@ if(isset($_POST['update'])){
 $companyInfo= mysqli_query($GLOBALS['connection'],"SELECT * FROM companyinformation");
 $row=mysqli_fetch_array($companyInfo);
 
+if(isset($_POST['Submit'])){
+    $monopen= $_POST['monOpen'];
+    $monclose= $_POST['monClose'];
+    $tuesopen= $_POST['tuesOpen'];
+    $tuesclose= $_POST['tuesClose'];
+    $wedopen= $_POST['wedOpen'];
+    $wedclose= $_POST['wedClose'];
+    $thursopen= $_POST['thursOpen'];
+    $thursclose= $_POST['thursClose'];
+    $friopen= $_POST['friOpen'];
+    $friclose= $_POST['friClose'];
+    $satopen= $_POST['satOpen'];
+    $satclose= $_POST['satClose'];
+    $sunopen= $_POST['sunOpen'];
+    $sunclose= $_POST['sunClose'];
 
 
+    $conn = $GLOBALS['connection'];
+    $opening=$conn->prepare("UPDATE `openinghours` set
+    `MonOpen`=?,`TuesOpen`=?,`WedOpen`=?,
+    `ThursOpen`=?,`FriOpen`=?,`SatOpen`=?,
+    `SunOpen`=?,`MonClose`=?,`TueClose`=?,
+    `WedClose`=?,`ThursClose`=?,`FriClose`=?,
+    `SatClose`=?,`SunClose`=? WHERE `DailyID`=1 ");
+
+    $opening->bind_param("iiiiiiiiiiiiii", $monopen,$tuesopen,$wedopen,$thursopen,$friopen,$satopen,$sunopen,$monclose,$tuesclose,$wedclose,
+           $thursclose,$friclose,$satclose,$sunclose);
+    $opening->execute();
+    $result = $opening->get_result();
+
+    $upmsg= "information updated!";
+
+    echo "<h4>$upmsg</h4>";
+    header("refresh:1; url= ../Views/informations.php");}
+
+/*
 if(isset($_POST['Submit'])){
     $monopen= $_POST['monOpen'];
     $monclose= $_POST['monClose'];
@@ -54,7 +88,7 @@ if(isset($_POST['Submit'])){
 
     echo "<h4>$upmsg</h4>";
     header("refresh:1; url= ../Views/informations.php");
-}
+}*/
 
 $Openinghours=mysqli_query($GLOBALS['connection'],"SELECT * FROM openinghours");
 $openingtime=mysqli_fetch_array($Openinghours);

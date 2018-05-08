@@ -1,3 +1,8 @@
+<?php
+//require "../Controller/productDAO.php";
+?>
+
+
 <html>
 
 <body class="container">
@@ -10,11 +15,18 @@
 
 <div class="row" >
     <?php
-    $products = mysqli_query($GLOBALS['connection'],"SELECT * FROM `product` WHERE `productID`= '".$_GET['productID']."' ");
-    $allCatArray = mysqli_fetch_array($products);
+    $conn = $GLOBALS['connection'];
+    $productId= $_GET['productID'];
+    $stmt = $conn->prepare("SELECT * FROM `product` WHERE `productID`= ?");
+
+    $stmt->bind_param("i", $productId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $allCatArray = mysqli_fetch_array($result);
         ?>
         <div style="padding:35px" >
-                <form name="imgUp" method="post" action="../Controller/productDAO.php" enctype="multipart/form-data">
+                <form name="imgUp" method="post" action="../Controller/productDAO.php?productID=<?php echo $allCatArray["productID"];?>" enctype="multipart/form-data">
                     <div class="card-image">
                         <img class="card-image" style="width:200px; margin: auto;" src=<?php echo "../../asset/Ducks/$allCatArray[Image]"; ?> >
 
@@ -58,10 +70,12 @@
                     <input class="file-path validate" type="text" name="newPrice" placeholder="New Price" >
                 </div>
 
-                <div class="input-field">
-                    <b class="active" for="sale">Sale status:</b>
-                    <input type="checkbox" id="myCheck" onclick="myFunction()">
-                    <p id="text" style="display:none">On Sale!</p>
+                <div>
+
+                    <input type="checkbox" id="sale" name="salestatus" <?php if($allCatArray["OnSale"]==1){
+                    echo 'checked=\"checked\"';}?> >
+                    <label  for="sale">Sale status:</label>
+
                 </div>
                 <br><br>
 
@@ -69,23 +83,10 @@
                         Update
                     </button>
 
+
             </form>
         </div>
 </div>
-<script>
-    function myFunction() {
-        // Get the checkbox
-        var checkBox = document.getElementById("myCheck");
-        // Get the output text
-        var text = document.getElementById("text");
 
-        // If the checkbox is checked, display the output text
-        if (checkBox.checked == true){
-            text.style.display = "block";
-        } else {
-            text.style.display = "none";
-        }
-    }
-</script>
 </body>
 </html>

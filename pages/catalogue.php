@@ -43,11 +43,8 @@
                     $stmt = $conn->prepare("SELECT * FROM product WHERE CategoryName = ?");
                     $stmt->bind_param("s", $cat);
                     $stmt->execute();
-
-                    //$productCat = $GLOBALS['connection']->( "SELECT * FROM product WHERE CategoryName = '".$cat."' ");
-
                     $result = $stmt->get_result();
-                    //$catArray = mysqli_fetch_array($productCat);
+
                 foreach ($result as $catArray) {
 
                 //foreach ($productCat as $catArray) {

@@ -1,5 +1,6 @@
 <?php
 require_once "../Functions/TextDAO.php";
+//require_once "../AdminArea/Controller/productDAO.php";
 
 ?>
 
@@ -23,11 +24,12 @@ require_once "../Functions/TextDAO.php";
 
     <main  class="section">
 <div class="row">
+    <h4 class="teal-text" >The newest ducks!</h4>
 
     <?php
 
     //Read Products from Database
-    $query = "SELECT * FROM product LIMIT 8";
+    $query = "SELECT * FROM product ORDER BY productID DESC LIMIT 8 ";
     $result = mysqli_query($GLOBALS['connection'], $query) or die('Error, query failed');
     $productRow=mysqli_fetch_array($result);
 
@@ -40,6 +42,15 @@ require_once "../Functions/TextDAO.php";
                 <div class="card-image">
                     <img class="card-image" style="margin: auto;"
                         <?php echo "src=../asset/Ducks/$productRow[Image]"; ?> >
+                    <?php
+
+
+
+                    echo $productRow["OnSale"];
+
+                    if ($productRow["OnSale"] == 1){
+                        echo '<p style="color:red; fontsize:20px; margin: 0">Sale</p>';
+                    } ?>
                 </div>
 
                 <div class="card-content">

@@ -67,12 +67,12 @@
 		        <input id="Stock" type="number" name="stock" class="validate">
 	        </div>
 
-			<div class="input-field">
-				<b class="active" for="sale">Sale status:</b>
-				<p><lable for="sale" >
-					<input type="checkbox" class="filled-in" checked="checked" id="sale" name="sale" />
-					<span>On Sale</span>
-				</lable></p>
+			<div>
+
+				<input type="checkbox" id="sale" name="salestatus" >
+				<label  for="sale">Sale status:</label>
+
+			</div>
 
 			</div><br>
 

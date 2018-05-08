@@ -10,10 +10,18 @@
 <div class="row" >
      <h5>All products</h5>
                     <?php
-                $products = mysqli_query($GLOBALS['connection'],"SELECT * FROM `product`");
-                $allCatArray = mysqli_fetch_assoc($products);
 
-                foreach ($products as $allCatArray) {
+    $conn = $GLOBALS['connection'];
+
+    $stmt = $conn->prepare("SELECT * FROM `product`");
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $allCatArray = mysqli_fetch_assoc($result);
+
+
+
+                foreach ($result as $allCatArray) {
                     ?>
                     <div class="card medium">
 
@@ -37,7 +45,7 @@
                                 <p class="active" for="Price"><?php echo $allCatArray["Price"]; ?> -DKK </p>
                             </div>
                         <a href="productdetailDAO.php?productID=<?php echo $allCatArray["productID"];?> ">
-                                    <button class="btn "  type="update" name="update">
+                                    <button class="btn"  type="edit" name="edit">
                                         Edit
                                     </button>
                         </a>

@@ -20,7 +20,11 @@ CREATE TABLE `product`(
     Image VARCHAR(50) NOT NULL,
     Stock INT NOT NULL,
     OnSale BOOLEAN NULL ,
+<<<<<<< HEAD
     Upward BOOLEAN null,
+=======
+    Upward BOOLEAN null ,
+>>>>>>> 3dcd48cf5da8e956525f07b64543a0959b66c948
   FOREIGN KEY (CategoryName) REFERENCES `Category` (CategoryName)
 
 );
@@ -70,4 +74,8 @@ OpeningID INT NOT NULL AUTO_INCREMENT PRIMARY key,
 WeeksDay VARCHAR(50) NULL,
 OpeningTime TIME NULL,
 ClosingTime TIME NULL
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> 3dcd48cf5da8e956525f07b64543a0959b66c948

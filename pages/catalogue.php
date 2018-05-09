@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en-ca">
 
-<body class="container">
+<body >
 
     <header>
         <!-- BEGIN mynav.php INCLUDE -->
@@ -29,7 +29,9 @@
                  <?php   echo $row['CategoryName'];?>
                 </a>
                 <?php  }  ?>
-
+                <a class="btn-large" href="catalogue.php">
+                    Show all
+                </a>
 
 
         </div>
@@ -47,8 +49,6 @@
 
                 foreach ($result as $catArray) {
 
-                //foreach ($productCat as $catArray) {
-
 
                     ?>
                     <div class="card small">
@@ -61,6 +61,10 @@
                             </div>
 
                             <div class="card-content">
+                                <p style="color:red; font-size:40px; margin: -64px 0 3px 39px; position: absolute;"><?php
+                                    if ($catArray["OnSale"] == 1){
+                                        echo 'Sale';
+                                    } ?></p>
                   <span class="card-title center">
                        <?php echo $catArray["productName"]; ?> </span>
                                 <p class="text center"><?php echo $catArray["Price"]; ?> -DKK </p>
@@ -95,6 +99,10 @@
                             </div>
 
                             <div class="card-content">
+                                <p style="color:red; font-size:40px; margin: -64px 0 3px 39px; position: absolute;"><?php
+                                    if ($allCatArray["OnSale"] == 1){
+                                        echo 'Sale';
+                                    } ?></p>
                   <span class="card-title center">
                        <?php echo $allCatArray["productName"]; ?> </span>
                                 <p class="text center"><?php echo $allCatArray["Price"]; ?> -DKK </p>

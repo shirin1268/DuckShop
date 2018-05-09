@@ -12,10 +12,12 @@ require("../DB/session.php");
     <link rel="stylesheet" href="../materialize/css/materialize.css" >
     <link rel="stylesheet" href="../materialize/css/materialize.min.css" >
 </head>
+<div  style="margin-left: 75px">
         <?php if (logged_in()== true){ echo " Wellcome ". $_SESSION['FullName']; }
         ?>
-    <nav class="row teal darken-4">
-
+</div>
+    <nav class="teal darken-4">
+        <div class="row card-panel teal darken-4">
             <div class="btn right">
                 <a href="Order.php" >Shopping_cart
                     <?php
@@ -29,13 +31,11 @@ require("../DB/session.php");
             </div>
 
         <ul id="nav-mobile" class=" hide-on-med-and-down">
-
-
             <li><a href="#"><i class="material-icons">person </i></a>
                 <ul >
                     <?php if (logged_in()== true){
                         echo '<li><a href="ProfileView.php">My account</li>';
-                    }else '<li><a href="CreatNewUser.php">Create account</li>';
+                    }else{echo '<li><a href="CreatNewUser.php">Create account</li>';}
                         ?>
                     <li><a href="#">My orders</a></li>
                     <li><?php if (logged_in()== true){ ?>
@@ -54,8 +54,8 @@ require("../DB/session.php");
             <li><a href="../"><i class="material-icons left">search</i></a></li>
 
         </ul>
-    </nav>
-</div>
+
+</div> </nav>
 
 <!--
 <div class="input-field">

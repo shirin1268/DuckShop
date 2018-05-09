@@ -5,54 +5,65 @@ require("../Login/profile.php");
 
 <html>
 
-<body class="container">
+<body >
 <?php include "../pages/mynav.php"; ?>
 
-<h3 class="teal-text">Edit your profile</h3>
+<?php
+$Email=$_SESSION['Email'];
+$result = mysqli_query($GLOBALS['connection'], "SELECT * FROM `costumer` where `Email`='{$Email}'");
+$row=mysqli_fetch_assoc($result);
+?>
 
-<div class="row" >
-	<div class="card horizontal col s12">
+<div  style="margin-left: 75px; margin-right: 75px; margin-top: 75px; height: auto">
 
+	<h3 class="teal-text">Edit your profile</h3>
 
+			<form  method="post" enctype="multipart/form-data" action="../Login/profile.php?id=<?php echo $row['UserID']; ?>">
+				<br><div class="card horizontal">
 
-
+					<div class="card-image" >
 					<?php
-					$Email=$_SESSION['Email'];
-					$result = mysqli_query($GLOBALS['connection'], "SELECT * FROM costumer where Email='{$Email}'");
-					if($row=mysqli_fetch_array($result)){
-						echo "  <img style='width:auto' src=\"../asset/profilePic/$row[Picture]\" > <br/>".
+						echo "<img style=\"height: 250px; width: auto; margin-left: 30px; margin-top: 30px\" src=\"../asset/profilePic/$row[Picture]\" > <br/>".
 							'<input type="file" name="fileToUpload" id="fileToUpload" >';?>
-		<br><br><br>
-						<form  class="col s12" action="../Login/profile.php" method="post" enctype="multipart/form-data">
+					</div>
+		<br><br>
+					<div style="width: 50%; margin-left: 20%">
+
 					<?php
+					echo '<br>'. '<p >Email:</p>' .$row['Email']. '<br>';
+
 					echo '<br>'. '<p>Name:</p>' .
-						'<input class="input-field col s6" type="text" name="FullName" maxlength="30" value="'.$row['FullName'].' " />';
+						'<input class="input-field" type="text" name="FullName"  value="'.$row['FullName'].' " />';
 
 						echo '<br>'. '<p>Gender:</p>' .
-							'<input class="input-field col s6" type="text" name="Gender" maxlength="2" value="'. $row['Gender']. '" />';
-						echo
+							'<span class="title" value="'. $row['Gender']. '" />';?>
+							<select  class="browser-default" name="Gender" >
+								<option>Female</option>
+								<option>Male</option>
+							</select>
+
+					<?php echo
 							'<br>'. '<p>Adress:</p>' .
-							'<input class="input-field col s6" type="text" name="Adress" maxlength="30" value="'. $row['Adress'] . '" />';
+							'<input class="input-field" type="text" name="Adress"  value="'. $row['Adress']. '" />';
 						echo
 							'<br>'. '<p>Tel:</p>'.
-							'<input class="input-field col s6" type="text" name="Tel" maxlength="30" value="'. $row['Tel'].'" />';
+							'<input class="input-field " type="text" name="Tel"  value="'. $row['Tel'].'" />';
 
-						echo
-							'<br>'.'<br>'.'<br>'.'<button type="submit" name="submit" value="Update">'.'Update'. '</button>';
+						echo '<br>'.'<br>'.
 
-						echo '<br>'.'<a href="../Login/profile.php?id='.$row['Email'].'"'.
+							'<button type="submit" name="submit" value="submit" >'.'Update'. '</button>';
+
+						echo '<br>'.'<br>'.'<a href="../Login/profile.php?Email='.$row['Email'].'"'.
 						'onclick="return confirm(\'Are you sure you want to delete your profile?\')" '. '>';
 
-						echo '<br>'.'<i class="material-icons">delete</i> </a><br>';
-					} ?>
-
-				</form>
-
-
-			</div>
-		</div>
-	</div>
+						echo '<i class="material-icons">delete</i>'.' </a>'.'<br>'.'<br>';
+					 ?>
+					</div>
+				</div>
+			</form>
 </div>
+
+
 
 
 <footer class="page-footer teal darken-4">

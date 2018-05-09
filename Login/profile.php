@@ -4,27 +4,25 @@ require_once("../DB/Connection.php");
 
 if(isset($_POST["submit"])) {
 
-    $Email=$_SESSION['Email'];
-
-    $result = mysqli_query($GLOBALS['connection'],"SELECT * FROM costumer where Email='{$Email}'");
+    $UserID=$_GET['id'];
 
     $FullName = $_POST['FullName'];
     $Gender=$_POST['Gender'];
     $Adress=$_POST['Adress'];
     $Tel=$_POST['Tel'];
 
+
     $target_dir = "../asset/profilePic/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $target_pic= $_FILES["fileToUpload"]["name"];
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
     $file = $_FILES["fileToUpload"]["tmp_name"];
     $imageType = getimagesize($file);
-    //$size = filesize($file);
+
 
 // Check if image file is a actual image or fake image
-   // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+
     if($imageType !== false) {
         echo "File is an image - " . $imageType["mime"] . ".";
         $uploadOk = 1;
@@ -62,7 +60,8 @@ else {
 	}
 }
 
-   $result= mysqli_query($GLOBALS['connection'],"UPDATE `costumer` SET `FullName`='$FullName',`Gender`='$Gender',`Tel`='$Tel',`Adress`='$Adress',`Picture`='$target_pic' WHERE Email='$Email'");
+  $result= mysqli_query($GLOBALS['connection'],"UPDATE `costumer` SET `FullName`='$FullName',
+`Gender`='$Gender',`Tel`='$Tel',`Adress`='$Adress',`Picture`='$target_pic' WHERE UserID='$UserID' ");
 
 	if ($result) {
 		$message = "Your profile is updated!.";
@@ -72,6 +71,6 @@ else {
 	}
 
 if (!empty($message)) {echo "<p>" . $message . "</p>";}
-
+    header("refresh:2; url= ../pages/PofileView.php");
 }
 

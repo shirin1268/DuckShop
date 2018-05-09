@@ -2,7 +2,7 @@
 
 <html lang="en-ca">
 
-<body  class="container">  <!-- id indicates page; is used by menu CSS to indicate active page.  No JS needed. -->
+<body>  <!-- id indicates page; is used by menu CSS to indicate active page.  No JS needed. -->
 
     <header >
         <!-- BEGIN mynav.php INCLUDE -->
@@ -19,7 +19,7 @@
                 <table>
                     <thead>
                     <tr>
-                        <th></th>
+                        <th><h4>Opening hours</h4></th>
                         <th>Open from</th>
                         <th>Closed</th>
                     </tr>
@@ -29,7 +29,7 @@ $Opentime=mysqli_fetch_array($weekquery);
 ?>
                     <tbody>
                     <tr>
-                        <td>Moday></td>
+                        <td>Monday</td>
                         <td><?php echo $Opentime['MonOpen'] ?></td>
                         <td><?php echo $Opentime['MonClose'] ?></td>
                     </tr>
@@ -78,6 +78,3 @@ $Opentime=mysqli_fetch_array($weekquery);
 </body>
 </html>
 
-<?php  /*
-INSERT INTO `openinghours` (`OpeningID`, `Monday`, `Thuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`, `Sonday`)
-VALUES (NULL, '8:00 - 17:00', '8:00 - 17:00', '8:00 - 17:00', '8:00 - 17:00', '8:00 - 14:00', '10:00 - 14:00', '10:00 - 14:00'); */?>

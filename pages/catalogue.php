@@ -69,8 +69,10 @@
                        <?php echo $catArray["productName"]; ?> </span>
                                 <p class="text center"><?php echo $catArray["Price"]; ?> -DKK </p>
 
-                                <input type="number" name="quantity" value="1">
-                                <input type="submit" value="Add to cart" class="addBtn">
+                                <i onclick="document.getElementById('heart').style.color ='red'" class="fa fa-heart" id="heart" style="color: teal"></i>
+
+                                <input type="number" style="height: 25px; width: 70%; margin: auto" name="quantity" value="1">
+                                <input type="submit" name="addtocart" style="float: right" value="+" class="btn-block center">
                             </div>
                         </form>
                     </div>
@@ -107,8 +109,10 @@
                        <?php echo $allCatArray["productName"]; ?> </span>
                                 <p class="text center"><?php echo $allCatArray["Price"]; ?> -DKK </p>
 
-                                <input type="number" name="quantity" value="1">
-                                <input type="submit" value="Add to cart" class="addBtn">
+                                <i onclick="document.getElementById('heart').style.color ='red'" class="fa fa-heart" id="heart" style="color: teal"></i>
+
+                                <input type="number" style="height: 25px; width: 70%; margin: auto" name="quantity" value="1">
+                                <input type="submit" name="addtocart" style="float: right" value="+" class="btn-block center">
                             </div>
                         </form>
                     </div>

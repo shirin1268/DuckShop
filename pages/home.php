@@ -47,18 +47,20 @@ require_once "../Functions/TextDAO.php";
                 </div>
 
                 <div class="card-content">
-                    <div> <p style="color:red; font-size:50px; margin: -64px 0 3px 39px; position: absolute;"><?php
+                    <div> <p style="color:red; font-size:50px; margin: -85px 0 3px 39px; position: absolute;"><?php
                         if ($productRow["OnSale"] == 1){
                             echo 'Sale';
                         } ?></p>
                     </div>
                   <span class="card-title center">
                        <?php echo $productRow["productName"]; ?> </span>
-                    <p class="text center"><?php echo $productRow["Price"] . " -DKK "; ?></p>
-                    <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
 
-                    <input type="number" name="quantity" value="1">
-                    <input type="submit" name="addtocart" value="Add to cart" class="addBtn">
+                    <p class="text center"><?php echo $productRow["Price"] . " -DKK "; ?></p>
+                    <br>
+                    <i onclick="document.getElementById('heart').style.color ='red'" class="fa fa-heart" id="heart" style="color: teal"></i>
+
+                    <input type="number" style="height: 25px; width: 70%; margin: auto" name="quantity" value="1">
+                    <input type="submit" name="addtocart" style="float: right" value="+" class="btn-block center">
 
                 </div>
             </form>
@@ -94,7 +96,7 @@ require_once "../Functions/TextDAO.php";
                         </div>
 
                         <div class="card-content">
-                             <p style="color:red; font-size:50px; margin: -64px 0 3px 39px; position: absolute;"><?php
+                             <p style="color:red; font-size:50px; margin: -85px 0 3px 40px; position: absolute;"><?php
                                     if ($productRow["OnSale"] == 1){
                                         echo 'Sale';
                                     } ?></p>
@@ -103,10 +105,14 @@ require_once "../Functions/TextDAO.php";
                        <?php echo $productRow["productName"]; ?> </span>
                             <p class="text center"><?php echo $productRow["Price"] . " -DKK "; ?></p>
 
-                            <input type="number" name="quantity" value="1">
-                            <input type="submit" name="addtocart" value="Add to cart" class="addBtn">
+                            <br>
+                            <i  onclick="document.getElementById('heart').style.color ='red'" class="fa fa-heart" id="heart" style="color: teal"  ></i>
+
+                            <input type="number" style="height: 25px; width: 70%; margin: auto" name="quantity" value="1">
+                            <input type="submit"  name="addtocart" style="float: right" value="+" class="btn-block center">
 
                         </div>
+
                     </form>
                 </div>
 
@@ -118,12 +124,22 @@ require_once "../Functions/TextDAO.php";
             </a>
         </div>
 
+
+        <script>
+   /*         function changeColor()
+            {
+                var icon = document.getElementById('heart');
+                icon.style.color = "red";
+            }*/
+        </script>
+
     </main>
 
 <footer class="page-footer teal darken-4">
 
     <?php include "footer.php"; ?>
 </footer>
+
 
 
 </body>

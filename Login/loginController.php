@@ -26,7 +26,7 @@ require_once "../DB/session.php";
 				$_SESSION['FullName'] = $found_user['FullName'];
 				$_SESSION['Email'] = $found_user['Email'];
 				$_SESSION['Picture'] = $found_user['Picture'];
-				//echo "The found user:" . $found_user['FullName'];
+
 				header("refresh:1; url=../index.php");
 			} else {
 				// username/password combo was not found in the database

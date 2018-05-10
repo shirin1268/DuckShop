@@ -51,16 +51,23 @@ require("../DB/session.php");
             <li><a href="../pages/about.php">About us</a></li>
             <li><a href="../pages/catalogue.php">Catalogue</a></li>
             <li><a href="../pages/contact.php">Contact</a></li>
-            <li><a href="../"><i class="material-icons left">search</i></a></li>
-
+            <li>
+            <div class="input-field" style="width: 350%">
+                <input id="search" type="search" class="autocomplete" required placeholder="Search">
+            </div>
+            </li>
         </ul>
-
-</div> </nav>
-
-<!--
-<div class="input-field">
-    <input id="search" type="search" required>
-    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-    <i class="material-icons">clear</i>
 </div>
--->
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.autocomplete');
+        var instances = M.Autocomplete.init(elems, options);
+    });
+
+
+</script>
+    </nav>
+
+
+

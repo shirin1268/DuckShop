@@ -2,9 +2,9 @@
 
 <html>
 
-<body class="container">
+<body >
 <?php include "mynav.php"; ?>
-
+<main class="section" style="height: auto; margin-top: 35px; padding: 75px">
 <h2>Please login</h2>
 
 <div class="row">
@@ -12,11 +12,11 @@
 		<div class="card teal darken-4">
 			<div class="card-content white-text">
 				<form action="../Login/loginController.php" method="post">
-					Email:
-					<input type="email" name="Email" maxlength="30" value="" />
-					Password:
-					<input type="password" name="Password" maxlength="30" value="" />
-					<input type="submit" name="submit" value="Login" />
+					<br>Email:
+					<br><input style="color: black" type="email" name="Email" maxlength="30" value="" />
+					<br>Password:
+					<br><input style="color: black" type="password" name="Password" maxlength="30" value="" />
+					<br><input style="color: black" type="submit" name="submit" value="Login" />
 				</form>
 			</div>
 			<div class="card-action">
@@ -26,10 +26,11 @@
 		</div>
 	</div>
 </div>
+</main>
 
-</body>
 <footer class="page-footer teal darken-4">
 
 	<?php include "footer.php"; ?>
 </footer>
+</body>
 </html>

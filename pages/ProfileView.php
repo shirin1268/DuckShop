@@ -12,6 +12,7 @@ require("../Login/profile.php");
 $Email=$_SESSION['Email'];
 $result = mysqli_query($GLOBALS['connection'], "SELECT * FROM `costumer` where `Email`='{$Email}'");
 $row=mysqli_fetch_assoc($result);
+
 ?>
 
 <div  style="margin-left: 75px; margin-right: 75px; margin-top: 75px; height: auto">
@@ -24,8 +25,12 @@ $row=mysqli_fetch_assoc($result);
 					<div class="card-image" >
 					<?php
 						echo "<img style=\"height: 250px; width: auto; margin-left: 30px; margin-top: 30px\" src=\"../asset/profilePic/$row[Picture]\" > <br/>".
-							'<input type="file" name="fileToUpload" id="fileToUpload" >';?>
+							'<input type="file" name="fileToUpload" id="fileToUpload">';
+					?>
 					</div>
+					<input type="hidden" name="imgURL" id="imgURL" value="<?php echo $row['Picture'] ?>">
+
+
 		<br><br>
 					<div style="width: 50%; margin-left: 20%">
 

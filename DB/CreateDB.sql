@@ -20,14 +20,10 @@ CREATE TABLE `product`(
     Image VARCHAR(50) NOT NULL,
     Stock INT NOT NULL,
     OnSale BOOLEAN NULL ,
-<<<<<<< HEAD
-    Upward BOOLEAN null,
-=======
-    Upward BOOLEAN null ,
->>>>>>> 3dcd48cf5da8e956525f07b64543a0959b66c948
   FOREIGN KEY (CategoryName) REFERENCES `Category` (CategoryName)
 
 );
+
 
 CREATE TABLE `costumer`(
     UserID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -41,14 +37,24 @@ CREATE TABLE `costumer`(
 
 );
 
-CREATE TABLE `OrderDetails`(
-  productID INT NOT NULL,
-  OrderID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  Quantity INT NOT NULL,
-  UserID INT NOT NULL,
-  OrderDate DATE NULL,
+CREATE TABLE  `orderedproduct` (
+  `OrderID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+  `UserID` int(11) NOT NULL,
+  `ProductID` int(11) NOT NULL,
+  `Quntity` int(11) NOT NULL,
+  `subTotalPrice` int(11) NOT NULL,
   FOREIGN KEY (UserID) REFERENCES `costumer` (UserID),
   FOREIGN KEY (productID) REFERENCES `product` (productID)
+);
+
+CREATE TABLE IF NOT EXISTS `OrderDetails` (
+  `RefNumber`     INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+  `OrderID`       INT(20) NOT NULL ,
+  `TotalQuantity` INT(11) NOT NULL,
+  `UserID`        INT(50) NOT NULL,
+  `OrderDate`     DATE DEFAULT NULL,
+  FOREIGN KEY (`UserID`)REFERENCES `costumer` (UserID) ,
+  FOREIGN KEY (OrderID)REFERENCES `orderedProduct` (OrderID)
 );
 
 CREATE TABLE Text(

@@ -10,7 +10,7 @@
 	function confirm_logged_in() {
 		if (!logged_in()) {
 		    echo "Please login first";
-			redirect_to("loginController.php");
+            header("refresh:4; url= ../pages/home.php");
 		}
 	}
 //session_unset();

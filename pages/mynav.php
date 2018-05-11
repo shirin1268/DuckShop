@@ -37,7 +37,7 @@ require("../DB/session.php");
                         echo '<li><a href="ProfileView.php">My account</li>';
                     }else{echo '<li><a href="CreatNewUser.php">Create account</li>';}
                         ?>
-                    <li><a href="#">My orders</a></li>
+                    <li><a href="../pages/MyOrders.php">My orders</a></li>
                     <li><?php if (logged_in()== true){ ?>
                             <a href="../Login/logout.php" >logout</a>
                         <?php }else{ ?>
@@ -46,7 +46,7 @@ require("../DB/session.php");
                     </li>
                 </ul>
             </li>
-            <li><a href="#"><i class="material-icons">favorite </i></a></li>
+            <li><a href="../pages/Favorits.php"><i class="material-icons">favorite </i></a></li>
             <li><a href="../pages/home.php">Home</a></li>
             <li><a href="../pages/about.php">About us</a></li>
             <li><a href="../pages/catalogue.php">Catalogue</a></li>

@@ -2,10 +2,7 @@ DROP DATABASE IF EXISTS shop;
 CREATE DATABASE shop;
 USE shop;
 
-CREATE TABLE `PostalCode`(
-    PostalCodeID varchar(20) NOT NULL PRIMARY KEY,
-    City varchar(255)NOT NULL
-);
+
 CREATE TABLE `Category`(
   CategoryID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   CategoryName VARCHAR(255) UNIQUE ,
@@ -49,15 +46,6 @@ CREATE TABLE  `orderedproduct` (
 );
 
 
-
-CREATE TABLE Text(
-  textID INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-  textcontent VARCHAR(5000)NULL ,
-  textname VARCHAR(50)NOT NULL
-
-);
- 
-
 CREATE TABLE CompanyInformation (
   CompanyID INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
   CompanyName VARCHAR(255) NOT NULL,
@@ -73,8 +61,6 @@ OpeningID INT NOT NULL AUTO_INCREMENT PRIMARY key,
 WeeksDay VARCHAR(50) NULL,
 OpeningTime TIME NULL,
 ClosingTime TIME NULL
-<<<<<<< HEAD
+
 );
-=======
-);
->>>>>>> 3dcd48cf5da8e956525f07b64543a0959b66c948
+

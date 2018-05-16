@@ -2,7 +2,7 @@
 <?php
 require("../DB/Connection.php");
 require("../DB/session.php");
-require("../DB/Cookie.php");
+
 
 ?>
 <head>
@@ -19,7 +19,7 @@ require("../DB/Cookie.php");
 
         ?>
 </div>
-    <nav class="teal darken-4">
+    <nav class="teal darken-4" >
         <div class="row card-panel teal darken-4">
             <div class="btn right">
                 <a href="Order.php" >Shopping_cart

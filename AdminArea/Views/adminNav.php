@@ -12,8 +12,8 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<nav >
-	<div class="nav-wrapper teal darken-4">
+<nav style="margin-bottom: 150px" >
+	<div class="nav-wrapper teal darken-4" >
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li ><a href="../../index.php">Front page</a></li>
 
@@ -24,14 +24,12 @@
 					<li><a href="addproducts.php">Add Product</a></li>
 				</ul>
 			</li>
-			<li>Update Info
-				<ul>
-					<li><a href="informations.php">Company info</a></li>
-					<li><a href="#">Contact info</a></li>
-					<li><a href="#">Context</a></li>
-				</ul>
+			<li>Company Info</li>
+			<li>
+				<form action="../../Functions/livesearch.php" method="post">
+					<input type="text" style="font-size=30"  name="query" placeholder="Search">
+				</form>
 			</li>
-
 		</ul>
 
 
@@ -47,11 +45,4 @@
 	</div>
 </nav>
 
-<div class="input-field center">
-	<label class="label-icon" for="search">
-		<input id="search" type="search" required>
-		<i class="material-icons right_text">search</i>
-		<i class="material-icons left">clear</i>
-	</label>
-</div>
 

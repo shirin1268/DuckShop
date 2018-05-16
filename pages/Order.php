@@ -38,10 +38,13 @@
                     <th><strong>Action</strong></th>
                 </tr>
                 <?php
+                $catname = array();
                 foreach ($_SESSION["cart_item"] as $item){
                     ?>
                     <tr>
-                        <td><img style="width: 150px; height: auto" <?php echo "src=../asset/Ducks/$item[Image]"; ?> ></td>
+                        <a href="Detailpage.php?productID=<?php echo $item['productID'];?>">
+                            <td><img style="width: 150px; height: auto" <?php echo "src=../asset/Ducks/$item[Image]"; ?> ></td>
+                        </a>
                         <td><strong><?php echo $item["productName"]; ?></strong></td>
                         <td><?php echo $item["productID"]; ?></td>
                         <td><?php echo $item["quantity"]; ?></td>
@@ -52,7 +55,9 @@
                         </td>
                     </tr>
                     <?php
-                    $item_total += ($item["Price"]*$item["quantity"]);}
+                    array_push($catname, $item["CategoryName"]);
+
+                $item_total += ($item["Price"]*$item["quantity"]);}
                 ?>
 
                 <tr>
@@ -61,14 +66,46 @@
                 </tbody>
             </table>
             <?php
-        }
+
         ?>
 </div>
 
-
+    <hr>
 <button class="btn right" id="Checkout" value="Pay" onclick="myFunction()" >
         Pay & check out
 </button>
+
+    <div class="row" style="width: 90%; height: auto">
+        <h5>You may also like this:</h5>
+        <?php
+        $newcatname=array_shift($catname);
+        $query="select * from product where CategoryName='$newcatname' ORDER BY productName limit 5";
+        $result=mysqli_query($GLOBALS['connection'],$query);
+        $relevant=mysqli_fetch_array($result);
+        foreach ($result as $relevant){?>
+           <div class="card" style="margin: 20px; width: 200px; height:auto; float:left">
+            <a href="Detailpage.php?productID=<?php echo $relevant['productID'];?>">
+                <div class="card-image">
+                    <img class="card-image" style="margin: auto;"
+                        <?php echo "src=../asset/Ducks/$relevant[Image]"; ?> >
+                </div>
+            </a>
+
+            <div class="card-content">
+                <span class="card-title center">
+                       <?php echo $relevant["productName"]; ?>
+                </span>
+                <p class="text center">
+                    <?php echo $relevant["Price"] . " -DKK "; ?>
+                </p><br>
+            </div>
+           </div>
+
+
+        <?php
+        }}
+       ?>
+    </div>
 
     <script>
         function myFunction() {
@@ -84,6 +121,8 @@
             document.getElementById("demo").innerHTML = x;
         }
     </script>
+
+
 
 
 

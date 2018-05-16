@@ -2,6 +2,7 @@
 <?php
 require("../DB/Connection.php");
 require("../DB/session.php");
+require("../DB/Cookie.php");
 
 ?>
 <head>
@@ -14,6 +15,8 @@ require("../DB/session.php");
 </head>
 <div  style="margin-left: 75px">
         <?php if (logged_in()== true){ echo " Wellcome ". $_SESSION['FullName']; }
+
+
         ?>
 </div>
     <nav class="teal darken-4">
@@ -51,22 +54,13 @@ require("../DB/session.php");
             <li><a href="../pages/about.php">About us</a></li>
             <li><a href="../pages/catalogue.php">Catalogue</a></li>
             <li><a href="../pages/contact.php">Contact</a></li>
-            <li>
-            <div class="input-field" style="width: 350%">
-                <input id="search" type="search" class="autocomplete" required placeholder="Search">
-            </div>
+            <li><form action="../Functions/livesearch.php" method="post">
+                    <input type="text" size="30" name="query" placeholder="Search">
+                </form>
             </li>
         </ul>
 </div>
-<script>
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.autocomplete');
-        var instances = M.Autocomplete.init(elems, options);
-    });
-
-
-</script>
     </nav>
 
 

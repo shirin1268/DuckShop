@@ -1,6 +1,6 @@
 <?php require_once("../DB/session.php"); ?>
 <?php require_once ("../DB/Connection.php");?>
-<?php require_once("../DB/func.php"); ?>
+<?php require_once ("../Login/func.php");?>
 <?php
 
 		// Four steps to closing a session

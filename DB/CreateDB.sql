@@ -43,19 +43,12 @@ CREATE TABLE  `orderedproduct` (
   `ProductID` int(11) NOT NULL,
   `Quntity` int(11) NOT NULL,
   `subTotalPrice` int(11) NOT NULL,
+  `OrderDate`     DATE DEFAULT NULL,
   FOREIGN KEY (UserID) REFERENCES `costumer` (UserID),
   FOREIGN KEY (productID) REFERENCES `product` (productID)
 );
 
-CREATE TABLE IF NOT EXISTS `OrderDetails` (
-  `RefNumber`     INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-  `OrderID`       INT(20) NOT NULL ,
-  `TotalQuantity` INT(11) NOT NULL,
-  `UserID`        INT(50) NOT NULL,
-  `OrderDate`     DATE DEFAULT NULL,
-  FOREIGN KEY (`UserID`)REFERENCES `costumer` (UserID) ,
-  FOREIGN KEY (OrderID)REFERENCES `orderedProduct` (OrderID)
-);
+
 
 CREATE TABLE Text(
   textID INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,

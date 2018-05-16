@@ -1,6 +1,5 @@
 <?php
-require_once "../Functions/TextDAO.php";
-//require_once "../AdminArea/Controller/productDAO.php";
+//require_once "../Functions/TextDAO.php";
 
 ?>
 
@@ -39,12 +38,12 @@ require_once "../Functions/TextDAO.php";
 
         <div class="card small">
             <form method="post" action="../Functions/ShoppingCard.php?action=add&productID=<?php echo $productRow['productID'];?>">
-                <div class="card-image">
-
-                    <img class="card-image" style="margin: auto;"
+                <a href="Detailpage.php?productID=<?php echo $productRow['productID'];?>">
+                    <div class="card-image">
+                        <img class="card-image" style="margin: auto;"
                         <?php echo "src=../asset/Ducks/$productRow[Image]"; ?> >
-
-                </div>
+                    </div>
+                </a>
 
                 <div class="card-content">
                     <div> <p style="color:red; font-size:50px; margin: -85px 0 3px 39px; position: absolute;"><?php
@@ -57,7 +56,7 @@ require_once "../Functions/TextDAO.php";
 
                     <p class="text center"><?php echo $productRow["Price"] . " -DKK "; ?></p>
                     <br>
-                    <i onclick="document.getElementById('heart').style.color ='red'" class="fa fa-heart" id="heart" style="color: teal"></i>
+                    <i onclick="document.getElementById('<?php echo $productRow["productID"]; ?>').style.color ='red'" class="fa fa-heart" id="<?php echo $productRow["productID"]; ?>" style="color: teal"></i>
 
                     <input type="number" style="height: 25px; width: 70%; margin: auto" name="quantity" value="1">
                     <input type="submit" name="addtocart" style="float: right" value="+" class="btn-block center">
@@ -88,12 +87,12 @@ require_once "../Functions/TextDAO.php";
                 <div class="card small">
 
                     <form method="post" action="../Functions/ShoppingCard.php?action=add&productID=<?php echo $productRow['productID'];?>">
-                        <div class="card-image">
-
-                            <img class="card-image" style="margin: auto;"
+                        <a href="Detailpage.php?productID=<?php echo $productRow['productID'];?>">
+                           <div class="card-image">
+                               <img class="card-image" style="margin: auto;"
                                 <?php echo "src=../asset/Ducks/$productRow[Image]"; ?> >
-
-                        </div>
+                           </div>
+                       </a>
 
                         <div class="card-content">
                              <p style="color:red; font-size:50px; margin: -85px 0 3px 40px; position: absolute;"><?php
@@ -106,7 +105,7 @@ require_once "../Functions/TextDAO.php";
                             <p class="text center"><?php echo $productRow["Price"] . " -DKK "; ?></p>
 
                             <br>
-                            <i  onclick="document.getElementById('heart').style.color ='red'" class="fa fa-heart" id="heart" style="color: teal"  ></i>
+                            <i  onclick="document.getElementById('<?php echo $productRow['productID'];?>').style.color ='red'" class="fa fa-heart" id="<?php echo $productRow['productID'];?>" style="color: teal"  ></i>
 
                             <input type="number" style="height: 25px; width: 70%; margin: auto" name="quantity" value="1">
                             <input type="submit"  name="addtocart" style="float: right" value="+" class="btn-block center">
@@ -124,14 +123,6 @@ require_once "../Functions/TextDAO.php";
             </a>
         </div>
 
-
-        <script>
-   /*         function changeColor()
-            {
-                var icon = document.getElementById('heart');
-                icon.style.color = "red";
-            }*/
-        </script>
 
     </main>
 

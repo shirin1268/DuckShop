@@ -26,7 +26,7 @@ require_once "../DB/session.php";
 				$_SESSION['FullName'] = $found_user['FullName'];
 				$_SESSION['Email'] = $found_user['Email'];
 				$_SESSION['Picture'] = $found_user['Picture'];
-				$_SESSION['UserID'] = $found_user['UserID'];
+				$_SESSION['UserID'] = $found_user['Picture'];
 
 
 				header("refresh:1; url=../index.php");

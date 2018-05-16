@@ -21,6 +21,7 @@ if(!empty($_GET["action"])) {
                     'productName'=>$productById[0]["productName"],
                     'productID'=>$productById[0]["productID"],
                     'quantity'=>$_POST["quantity"],
+                    'CategoryName'=>$productById[0]["CategoryName"],
                     'Price'=>$productById[0]["Price"]));
 
                 if(!empty($_SESSION["cart_item"])) {

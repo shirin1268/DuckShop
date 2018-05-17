@@ -10,7 +10,7 @@ require("../Login/profile.php");
 
 <?php
 $Email=$_SESSION['Email'];
-$result = mysqli_query($GLOBALS['connection'], "SELECT * FROM `costumer` where `Email`='{$Email}'");
+$result = mysqli_query($GLOBALS['connection'], "SELECT * FROM `customer` where `Email`='{$Email}'");
 $row=mysqli_fetch_assoc($result);
 
 ?>

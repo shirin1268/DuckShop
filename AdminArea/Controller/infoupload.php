@@ -3,7 +3,7 @@
 
 
 <?php
-/*
+
 if(isset($_POST['submit'])){
 		$categoryname = $_POST['categoryname'];
 		$descrip = $_POST['descrip'];
@@ -16,9 +16,9 @@ VALUES ( '$categoryname', '$descrip')");
 		echo "<h4>$upmsg</h4>";
 
 
-	header("refresh:1; url=../Views/informations.php");
+	header("refresh:1; url=../Views/addcategory.php");
 	}
 
-*/
+
 
 ?>

@@ -5,7 +5,7 @@
 
 <html>
 
-<body class="container">
+<body >
 <header>
     <!-- BEGIN mynav.php INCLUDE -->
     <?php include "adminNav.php"; ?>
@@ -36,7 +36,7 @@
                                 <input type="file" name="image">
                             </div>
                             <div class="file-path-wrapper" >
-                                <input class="file-path validate" type="text" placeholder="upload file" >
+                                <input class="file-path validate" type="text" placeholder="upload file" value="<?php echo "../../asset/Ducks/$allCatArray[Image]"; ?>" >
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                         <span class="card-title center">
                             <?php echo $allCatArray["productName"]; ?>
                         </span>
-                        <input placeholder="New name" type="text" name="newproductname" class="validate">
+                        <input placeholder="New name" type="text" name="newproductname" class="validate" value="<?php echo $allCatArray["productName"]; ?>">
                     </div>
 
                 <div>
@@ -54,7 +54,8 @@
                 <span class="card-title center">
                     <?php echo $allCatArray["CategoryName"]; ?>
                 </span>
-                <select placeholder="New Category" class="browser-default" name="newcategoryname" >
+                <select placeholder="New Category" class="browser-default" name="newcategoryname"  >
+                    <option> <?php echo $allCatArray["CategoryName"]; ?></option>
                     <?php
                     $result=mysqli_query($GLOBALS['connection'],'SELECT * FROM `category`');
                     $row = mysqli_fetch_array($result);
@@ -66,8 +67,7 @@
                 <div class="input-field">
                     <b class="active" for="Price">Price:</b>
                     <span class="card-title center">
-                        <?php echo $allCatArray["Price"]; ?> -DKK </span>
-                    <input class="file-path validate" type="text" name="newPrice" placeholder="New Price" >
+                    <input class="file-path validate" type="text" name="newPrice" placeholder="New Price" value=" <?php echo $allCatArray["Price"]; ?>" >
                 </div>
 
                 <div>

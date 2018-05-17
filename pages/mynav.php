@@ -49,7 +49,6 @@ require("../DB/session.php");
                     </li>
                 </ul>
             </li>
-            <li><a href="../pages/Favorits.php"><i class="material-icons">favorite </i></a></li>
             <li><a href="../pages/home.php">Home</a></li>
             <li><a href="../pages/about.php">About us</a></li>
             <li><a href="../pages/catalogue.php">Catalogue</a></li>

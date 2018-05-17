@@ -53,8 +53,8 @@ INSERT INTO `companyinformation` ( `CompanyName`, `CompanyAdress`, `CompanyDescr
 -- Struktur-dump for tabellen `costumer`
 --
 
-DROP TABLE IF EXISTS `costumer`;
-CREATE TABLE IF NOT EXISTS `costumer` (
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE IF NOT EXISTS `customer` (
   `UserID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `FullName` varchar(20) DEFAULT NULL,
   `Gender` varchar(10) DEFAULT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `costumer` (
 -- Data dump for tabellen `costumer`
 --
 
-INSERT INTO `costumer` ( `FullName`, `Gender`, `Email`, `Password`, `Tel`, `Adress`, `Picture`) VALUES
+INSERT INTO `customer` ( `FullName`, `Gender`, `Email`, `Password`, `Tel`, `Adress`, `Picture`) VALUES
 ( 'Shirin Vazirian 11', 'Female', 'shirin1268@gmail.com ', '$2y$15$L2c7d9sp5TzLhTofqoKdkeV6FU9d725vDMuEypbJjB0pO/GexXW/q', 52735242, 'fyrrelunden 2346', 'Karierremesse (180)SH.jpg'),
 ( 'Behdin Bagheri', 'M', 'behdin2010@gmail.com', '$2y$15$ea6NX8rvK6Bjm3toaUkkJ.eyZM/LqjMt6gdgDiDZpbVMOyV.NAsYi', 50393639, 'Fyrrelunden 62', 'Rubinduck.jpg'),
 ( 'Ati', NULL, 'Ati@gmail.com', '$2y$15$D7tzpSATAM8P2FLR7angKuERgDzQtuwEbjIsifL1cGrxpsd4PMl5.', NULL, NULL, NULL),
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `orderedproduct` (
   `Quantity` int(11) NOT NULL,
   `subTotalPrice` int(11) NOT NULL,
   `OrderDate` date NOT NULL,
-   FOREIGN KEY (UserID) REFERENCES `costumer` (UserID),
+   FOREIGN KEY (UserID) REFERENCES `customer` (UserID),
   FOREIGN KEY (productID) REFERENCES `product` (productID)
 )
 -- --------------------------------------------------------

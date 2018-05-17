@@ -14,7 +14,7 @@
 		$iterations = ['cost' => 15];
 		$hashed_password = password_hash($password, PASSWORD_BCRYPT, $iterations);
 
-		$query = "INSERT INTO `costumer` (FullName, Email, Password) VALUES ('{$fullname}','{$email}','{$hashed_password}')";
+		$query = "INSERT INTO `customer` (FullName, Email, Password) VALUES ('{$fullname}','{$email}','{$hashed_password}')";
 		$result = mysqli_query($GLOBALS['connection'], $query);
 		if ($result) {
 			$message = "User Created.";

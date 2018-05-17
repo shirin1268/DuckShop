@@ -11,7 +11,7 @@ if(isset($_SESSION["cart_item"])){
 
 if(isset($_SESSION["Email"])){
     $Useremail=$_SESSION['Email'];
-    $stmt=$conn->prepare("select * from `costumer` WHERE Email='$Useremail' ");
+    $stmt=$conn->prepare("select * from `customer` WHERE Email='$Useremail' ");
     $stmt->execute();
     $result=$stmt->get_result();
     $foundUser=mysqli_fetch_array($result);
@@ -43,7 +43,7 @@ VALUES('$UserID','$itemID','$itemQua','$subTotal','$date')");
                 please contact us if there are more information you need.
             </h2>
 
-            <a class="btn center" type="Confirm" name="Confirm" href="../pages/MyOrders.php?action=date<?php echo $date; ?>" >
+            <a class="btn center" type="Confirm" name="Confirm" href="../pages/MyOrders.php?orderdato=<?php echo $date; unset($_SESSION["cart_item"]);?>" >
                 Check & Confirm
             </a>
         </div>

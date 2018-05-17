@@ -3,16 +3,17 @@
 
 <html>
 
-<body class="container">
+<body >
 <header>
     <!-- BEGIN mynav.php INCLUDE -->
     <?php include "adminNav.php"; ?>
     <!-- END mynav.php INCLUDE -->
 </header>
 
+<main class="section" style="margin: 75px">
 <h4>Add Products</h4>
 
-<div class="card horizontal">
+<div class="card horizontal" style="padding: 75px">
     <form name="imgUp" method="post" action="../Controller/uploader.php" enctype="multipart/form-data">
 
 		<div class="input-field">
@@ -21,7 +22,7 @@
 		        <input type="file" name="image" class="validate">
 	        </div><br><br>
 	        <div class="file-path-wrapper" >
-		        <input class="file-path validate" type="text" placeholder="upload file" >
+
 	        </div>
         </div>
         <br>
@@ -33,11 +34,11 @@
             <option value="Scale">Scale</option>
         </select><br>
 
-
-        <b class="col s6">Size: </b>
+		<div class="input-field ">
+        <b class="col s6">Size: <label>px or % </label></b><br>
 	    <input type="number" name="size" value="" class="validate">
-	    <label>px or %</label>
-        <br><br>
+	    </div>
+        <br>
 
         <div class="col s12">
 
@@ -49,6 +50,7 @@
 
 			<b class="active" for="CategoryName">Category Name:</b>
 	        <select class="browser-default" name="categoryname" >
+				<option>Choose category</option>
 	        <?php
             $result=mysqli_query($GLOBALS['connection'],'SELECT * FROM `category`');
             $row = mysqli_fetch_array($result);
@@ -82,6 +84,7 @@
         </div>
     </form>
 </div>
+</main>
 
 
 

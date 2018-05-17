@@ -1,6 +1,6 @@
 <html>
 
-<body class="container">
+<body >
 <header>
     <!-- BEGIN mynav.php INCLUDE -->
     <?php include "adminNav.php"; ?>

@@ -68,7 +68,7 @@ if(isset($_POST["submit"])) {
         }
     }
 
-  $result= mysqli_query($GLOBALS['connection'],"UPDATE `costumer` SET `FullName`='$FullName',
+  $result= mysqli_query($GLOBALS['connection'],"UPDATE `customer` SET `FullName`='$FullName',
 `Gender`='$Gender',`Tel`='$Tel',`Adress`='$Adress',`Picture`='$target_pic' WHERE UserID='$UserID' ");
 
 

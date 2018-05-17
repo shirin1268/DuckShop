@@ -6,7 +6,8 @@
 <body >  <!-- id indicates page; is used by menu CSS to indicate active page. -->
 <header>
     <!-- BEGIN mynav.php INCLUDE -->
-    <?php include "./mynav.php"; ?>
+    <?php include "./mynav.php";
+    confirm_logged_in();?>
     <!-- END mynav.php INCLUDE -->
 
 

@@ -24,7 +24,7 @@
 
                 $useremail=$_SESSION["Email"];
 
-    $query= mysqli_query($conn,"Select * from costumer WHERE Email='$useremail'");
+    $query= mysqli_query($conn,"Select * from customer WHERE Email='$useremail'");
     while( $row = mysqli_fetch_array($query) )
     {
         echo "<h6><strong>Customer Name: $row[FullName]</strong></h6><br>";

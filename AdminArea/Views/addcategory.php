@@ -3,14 +3,14 @@
 
 <html>
 
-<body class="container">
+<body >
 <header>
     <!-- BEGIN mynav.php INCLUDE -->
     <?php include "adminNav.php"; ?>
     <!-- END mynav.php INCLUDE -->
 
 </header>
-<div class="row" >
+<div class="row" style="margin-left: 75px">
     <div class="card horizontal col s12">
         <h4 class="col s7 "> Upload the new Category information</h4>
 
@@ -22,8 +22,8 @@
                     <input placeholder="Category Name" type="text" name="categoryname" class="validate">
                 </div>
                 <br>
-                <div class="input-field ">
-                    <b class="active" for="descrip">Description</b>
+                <div class="input-field "><br>
+                    <b class="active" for="descrip">Description</b><br>
                     <input placeholder="Category description" type="text" name="descrip" class="validate">
                 </div>
 

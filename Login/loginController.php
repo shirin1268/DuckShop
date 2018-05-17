@@ -9,7 +9,7 @@ require_once "../DB/session.php";
 		$email = trim(mysqli_real_escape_string($GLOBALS['connection'], $_POST['Email']));
 		$password = trim(mysqli_real_escape_string($GLOBALS['connection'],$_POST['Password']));
 
-		$query = "SELECT * FROM costumer WHERE Email = '{$email}' LIMIT 1";
+		$query = "SELECT * FROM customer WHERE Email = '{$email}' LIMIT 1";
 
 
 		$result = mysqli_query($GLOBALS['connection'], $query);

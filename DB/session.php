@@ -9,8 +9,8 @@
 
 	function confirm_logged_in() {
 		if (!logged_in()) {
-		    echo "Please login first";
-            header("refresh:2; url=../../index.php");
+		    echo "<h1 style='color: red'>Please login first</h1>";
+            header("refresh:2; url=../index.php");
 		}
 	}
 //session_unset();

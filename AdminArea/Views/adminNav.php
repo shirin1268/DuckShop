@@ -1,4 +1,4 @@
-<?php require "../../DB/Connection.php" ;?>
+<?php require "../../DB/Connection.php";?>
 <?php require "../../DB/session.php";
 confirm_logged_in();
 ?>
@@ -30,6 +30,13 @@ confirm_logged_in();
 		</ul>
 
 
+		<button class="waves-effect waves-light btn" style="margin-left: 75px">
+			<?php if (logged_in()== true){ ?>
+				<a href="../../Login/logout.php" >logout</a>
+			<?php }else{ ?>
+				<a href="../../pages/loginView.php" >login</a>
+			<?php } ?>
+		</button>
 
 		<?php if (logged_in()== true){ echo " Hej admin! ";}?>
 	</div>

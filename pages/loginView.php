@@ -3,7 +3,9 @@
 <html>
 
 <body >
+<header>
 <?php include "mynav.php"; ?>
+</header>
 <main class="section" style="height: auto; margin-top: 35px; padding: 75px">
 <h2>Please login</h2>
 

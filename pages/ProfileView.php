@@ -6,15 +6,17 @@ require("../Login/profile.php");
 <html>
 
 <body >
-<?php include "../pages/mynav.php"; ?>
+<header>
 
+<?php include "../pages/mynav.php"; ?>
+</header>
 <?php
 $Email=$_SESSION['Email'];
 $result = mysqli_query($GLOBALS['connection'], "SELECT * FROM `customer` where `Email`='{$Email}'");
 $row=mysqli_fetch_assoc($result);
 
 ?>
-
+<main class="section">
 <div  style="margin-left: 75px; margin-right: 75px; margin-top: 75px; height: auto">
 
 	<h3 class="teal-text">Edit your profile</h3>
@@ -68,7 +70,7 @@ $row=mysqli_fetch_assoc($result);
 			</form>
 </div>
 
-
+</main>
 
 
 <footer class="page-footer teal darken-4">

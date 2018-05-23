@@ -67,13 +67,15 @@ if(isset($_POST["submit"])) {
             }
         }
     }
+$conn=$GLOBALS['connection'];
+  $profile= $conn->prepare("UPDATE `customer` SET `FullName`=?,
+`Gender`=?,`Tel`=?,`Adress`=?,`Picture`=? WHERE UserID=? ");
 
-  $result= mysqli_query($GLOBALS['connection'],"UPDATE `customer` SET `FullName`='$FullName',
-`Gender`='$Gender',`Tel`='$Tel',`Adress`='$Adress',`Picture`='$target_pic' WHERE UserID='$UserID' ");
-
-
-	if ($result) {
-		$message = "Your profile is updated!.";
+    $profile->bind_param('ssissi',$FullName,$Gender,$Tel,$Adress,$target_pic,$UserID);
+    $profile->execute();
+    $updatedpro = $profile->get_result();
+	if ($profile) {
+		$message = "Your profile is updated!";
 	} else {
 		$message = "Your profile can not be edited.";
 		$message .= "<br />" . mysql_error();

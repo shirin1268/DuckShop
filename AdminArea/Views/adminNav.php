@@ -21,6 +21,7 @@ confirm_logged_in();
 			<li><a href="editproduct.php">Products</a></li>
 			<li><a href="addcategory.php">Add Category</a></li>
 			<li><a href="addproducts.php">Add Product</a></li>
+			<li><a href="addContext.php">Add News</a></li>
 			<li><a href="informations.php">Company Info</a></li>
 			<li>
 				<form action="../../Functions/livesearch.php" method="post">

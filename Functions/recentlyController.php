@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 function setRecentProduct($item,$url)
 {
     $newItem = array($item => $url);
@@ -24,7 +24,7 @@ function setRecentProduct($item,$url)
 function getRecentProducts(){
     $str ="<h5>you recently also viewed:</h5>";
 
-   // var_dump($_SESSION['items']);
+  //  var_dump($_SESSION['items']);
 
     if ($_SESSION['items']>0){
         echo $str. "<ul>";
@@ -39,4 +39,3 @@ function getRecentProducts(){
         echo " Nothing selected yet!";
     }
 }
-

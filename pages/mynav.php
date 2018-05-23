@@ -2,7 +2,7 @@
 <?php
 require("../DB/Connection.php");
 require("../DB/session.php");
-
+require_once "../Login/func.php";
 
 ?>
 <head>
@@ -12,6 +12,7 @@ require("../DB/session.php");
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../materialize/css/materialize.css" >
     <link rel="stylesheet" href="../materialize/css/materialize.min.css" >
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <div  style="margin-left: 75px">
         <?php if (logged_in()== true){ echo " Wellcome ". $_SESSION['FullName']; }

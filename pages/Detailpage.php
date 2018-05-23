@@ -26,8 +26,8 @@ require ("../Functions/recentlyController.php");
         $result = mysqli_query($GLOBALS['connection'], $query) or die('Error, query failed');
         $productRow=mysqli_fetch_array($result);
 
-        $item=$productRow["Image"];
-        setRecentProduct("$item",htmlspecialchars($_SERVER['REQUEST_URI']));
+        $item=$productRow[Image];
+        setRecentProduct($item,htmlspecialchars($_SERVER['REQUEST_URI']));
 
 
         foreach ($result as $productRow){
@@ -54,7 +54,7 @@ require ("../Functions/recentlyController.php");
                 </div>
                 <div >
                     <input type="number" style="height: 25px; width:50%; margin: auto" name="quantity" value="1">
-                    <input type="submit" name="addtocart" style="float: left; margin-right: 10px" value="+" class="btn-block center">
+                    <input type="submit" name="addtocart" style="float: left; margin-right: 10px" value="Add to cart" class="btn-block center">
                     <i onclick="document.getElementById('<?php echo $productRow['productID'];?>').style.color ='red'" class="fa fa-heart" id="<?php echo $productRow['productID'];?>" style="color: teal; margin-right: 20px"></i>
                 </div>
             </div>

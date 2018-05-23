@@ -1,7 +1,7 @@
 <?php
 require "../DB/Connection.php";
 require_once "../DB/session.php";
-
+require_once "../Login/func.php";
 confirm_logged_in();
 
 if(!empty($_GET["action"])) {

@@ -1,17 +1,12 @@
 
 <html lang="en-ca">
-<head>
-<script src="https://www.google.com/recaptcha/api.js"></script>
-</head>
-<body>
 
+<body>
 
     <header>
         <!-- BEGIN mynav.php INCLUDE -->
         <?php include "./mynav.php"; ?>
-        <div class="content">
 
-        </div>
         <!-- END mynav.php INCLUDE -->
     </header>
 
@@ -19,20 +14,46 @@
         <div class="row "><h4 class="teal-text">
 Please contact us if you have a question!
             </h4>
-        <form name="contact" method="post" action="../Functions/ContactPro.php">
-            <label for="name">Name: </label>
-            <input type="text" id="name" name="name" maxlength="50" size="30">
-            <br>
-            <label for="email">Email: </label>
-            <input type="text" id="email" name="email" maxlength="80" size="30">
-            <br>
-            <label for="message">Message: </label>
-            <textarea name="message" id="message" maxlength="2000" rows="55" cols="12" ></textarea>
-            <br><br><br>
-            <div class="g-recaptcha form-group" data-sitekey="6LdMO1YUAAAAAAodGYv2bwa6oEN9TWciDEDu8mfQ"></div>
-            <input type="submit" value="Send">
-        </form>
+             <?php
+
+if(isset($_GET['status']))
+{
+    ?> <b style='color:green'>
+ <?php  echo "Your message is sent successfully" ; ?>
+  </b><br /> <?php
+} ?>
+            <form class="col s12 form-contact" action="../Functions/ContactPro.php" method="POST">
+               <div class="card">
+                   <div class="card-content">
+                       <div class="row">
+                           <!-- Name -->
+                           <div class="input-field col s12">
+                                <b for="inputName">Name</b><br>
+                                <input  id="inputName" type="text" class="form-control" name="name" required><br>
+                           </div>
+                           <!-- Email -->
+                           <div class="input-field col s12">
+                              <b for="inputEmail">Email</b><br> 
+                              <input  id="inputEmail" type="text" class="form-control" name="email" required><br>
+                           </div>
+                           <!-- Message -->
+                           <div class="input-field col s12">
+                              <b for="inputMessage" >Message</b><br> 
+                              <textarea class="form-control materialize-textarea" id="inputMessage" col=6 row=50 name="message"></textarea><br>
+                           </div>
+                         
+                          <div class="input-field col s12">
+                               <div class="g-recaptcha" data-sitekey="6LerzlkUAAAAAN_sVuSAuvU7sSMbbnaN-RfbJMEj"></div><br>
+                           </div>
+                           <div class="input-field col s12">
+                               <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="SUBMIT">Send your message</button>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </form>
         </div>
+    
     </main>
 
 

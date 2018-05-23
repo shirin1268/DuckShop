@@ -1,6 +1,5 @@
 <?php require_once("../DB/Connection.php"); ?>
 
-
 <?php
 	// START FORM PROCESSING
 	if (isset($_POST['submit'])) { // Form has been submitted.
@@ -16,7 +15,7 @@
 
 		$query = "INSERT INTO `customer` (FullName, Email, Password) VALUES ('{$fullname}','{$email}','{$hashed_password}')";
 		$result = mysqli_query($GLOBALS['connection'], $query);
-		if ($result) {
+		if ($result ==true) {
 			$message = "User Created.";
 		} else {
 			$message = "User could not be created.";
@@ -25,8 +24,7 @@
 
 }
 	if (!empty($message)) {echo "<p>" . $message . "</p>";}
-	?>
-
-<?php
+	header("refresh:2; url=../index.php");
+	
 if (isset($GLOBALS['connection'])){mysqli_close($GLOBALS['connection']);}
 ?>

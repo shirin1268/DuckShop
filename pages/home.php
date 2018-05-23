@@ -1,27 +1,37 @@
-<?php
-//require_once "../Functions/TextDAO.php";
-
-?>
-
 <!DOCTYPE html>
 <html lang="en-ca">
 
 
-<body >  <!-- id indicates page; is used by menu CSS to indicate active page. -->
-
-
+<body >  
     <header>
     <!-- BEGIN mynav.php INCLUDE -->
     <?php include "./mynav.php"; ?>
     <!-- END mynav.php INCLUDE -->
-
+ </header>
+ 
             <div class=" row card-panel" style="margin-top: 35px">
                 <h3 class="teal-text" style="margin-left: 45px" >Rubber Duck's Shop.</h3>
-                <p class="teal-text" style="margin-left: 45px"> Find the cutest and newest rubber ducks here!</p>
-            </div>
-    </header>
+                <p class="teal-text" style="margin-left: 45px"> Find the cutest and newest rubber ducks here!</p><br>
+                </div>
+                
+                <div class="row"> 
+                <img src="../asset/Background.jpg"  style="width:100% ">
+                <div class="text-block">
+ <?php 
+  
+     $read="SELECT * FROM `news`order by textID DESC limit 1";
+     $result=mysqli_query($GLOBALS['connection'],$read);
+     $readtext=mysqli_fetch_array($result);
+     
+     foreach ($result as $readtext){
+     echo '<h5 class="teal-text" style="margin-left: 75px">'.$readtext['textName'].'</h5>';
+     echo '<p style="text-align:left; margin-left: 75px; margin-right: 75px" >'.$readtext['content'].'</p>';
+ }
+ ?></div>
+ </div><hr>
 
-    <main class="section" style="margin-left: 45px">
+
+    <main class="section" >
 <div class="row">
     <h4 class="teal-text" style="margin-left: 45px">The newest ducks!</h4>
 
@@ -70,7 +80,7 @@
           ?>
 
 
-</div>
+</div><hr>
         <div class="row">
             <h4 class="teal-text" style="margin-left: 45px">Daily offers</h4>
 

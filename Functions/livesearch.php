@@ -36,9 +36,8 @@ $raw_results =mysqli_query($conn, "SELECT * FROM `product`
 WHERE (`productName` LIKE '%".$query."%') OR (`CategoryName` LIKE '%".$query."%')") or die(mysqli_error());
 
 // * means that it selects all fields,
-// articles is the name of our table
 
-// '%$query%' is what we're looking for, % means anything, for example if $query is Hello
+// '%$query%' is what we're looking for, % means anything
 
 
 if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
@@ -49,7 +48,7 @@ foreach ($raw_results as $results){
   ?>
 
  <div class="card small">
-     <a href="Detailpage.php?productID=<?php echo $results["productID"];?> ">
+     <a href="../pages/Detailpage.php?productID=<?php echo $results["productID"];?> ">
 
                             <div class="card-image">
                                 <img class="card-image" style="margin: auto;" src=<?php echo "../asset/Ducks/$results[Image]"; ?> >
@@ -67,10 +66,6 @@ foreach ($raw_results as $results){
                                 <p class="active" for="Price"><?php echo $results["Price"]; ?> -DKK </p>
                             </div>
          <i onclick="document.getElementById('<?php echo $results['productID']; ?>').style.color ='red'" class="fa fa-heart" id="<?php echo $results['productID']; ?>" style="color: teal"></i>
-
-
-
-
  </div>
 <?php }
 }}

@@ -2,6 +2,7 @@
 
 require "../DB/Connection.php";
 require_once "../DB/session.php";
+require_once "func.php";
 
 
 	// START FORM PROCESSING
@@ -9,7 +10,7 @@ require_once "../DB/session.php";
 		$email = trim(mysqli_real_escape_string($GLOBALS['connection'], $_POST['Email']));
 		$password = trim(mysqli_real_escape_string($GLOBALS['connection'],$_POST['Password']));
 
-		$query = "SELECT * FROM customer WHERE Email = '{$email}' LIMIT 1";
+		$query = "SELECT * FROM `customer` WHERE Email = '{$email}' LIMIT 1";
 
 
 		$result = mysqli_query($GLOBALS['connection'], $query);
@@ -28,8 +29,7 @@ require_once "../DB/session.php";
 				$_SESSION['Picture'] = $found_user['Picture'];
 				$_SESSION['UserID'] = $found_user['Picture'];
 
-
-				header("refresh:1; url=../index.php");
+			
 			} else {
 				// username/password combo was not found in the database
 				$message = "Email/password combination incorrect.<br />
@@ -40,10 +40,10 @@ require_once "../DB/session.php";
 			$message = "You are now logged out.";
 		}
 	}
-	if (!empty($message)) {echo "<p>" . $message . "</p>";} ?>
+	if (!empty($message)) {echo "<p>" . $message . "</p>";} 
 
 
+				header ("Refresh: 2;URL='../pages/home.php'");
 
-<?php
 if (isset($GLOBALS['connection'])){mysqli_close($GLOBALS['connection']);}
 ?>
